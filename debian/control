@@ -1,0 +1,15 @@
+Source: alternc-oneclickinstallers
+Section: web
+Priority: optional
+Maintainer: Kienan Stewart <kienan.stewart@burntworld.ca>
+Build-Depends: debhelper (>= 10)
+Standards-Version: 4.1.2
+Homepage: 
+#Vcs-Git: https://anonscm.debian.org/git/collab-maint/alternc-oneclickinstallers.git
+#Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/alternc-oneclickinstallers.git
+
+Package: alternc-oneclickinstallers
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: <insert up to 60 chars description>
+ <insert long description, indented with spaces>
