@@ -10,11 +10,11 @@ Files: debian/*
 Copyright: 2018 Kienan Stewart <kienan.stewart@burntworld.ca>
 License: GPL-2.0+
 
-Files: images/drupal.png
+Files: src/admin/images/drupal.png
 Copyright: 2001 - 2013 Drupal Original Authors
 License: GPL-2.0+ 
 
-Files: images/wordpress.png
+Files: src/admin/images/wordpress.png
 Copyright: 2011 - 2018 WordPress contributors
 License: GPL-2.0+
 
