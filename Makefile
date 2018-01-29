@@ -1,10 +1,16 @@
-PREFIX=
 ALTERNC_BASE_PATH ?= /usr/share/alternc/panel/
+LOCALDIR=$(DESTDIR)$(ALTERNC_BASE_PATH)
 CSS_IDENTIFIER = "/*** alternc-oneclickinstaller ***/"
+C:=$(grep -s "$(CSS_IDENTIFIER) $(LOCALDIR)admin/styles/style-custom.css" 2>&1 > /dev/null; echo $$?)
+
+build:
+
+all:
+
+binary-arch:
 
 install:
-	cp -r src/ $(PREFIX)/$(ALTERNC_BASE_PATH)
-	C := $(grep -q "$(CSS_IDENTIFIER)" ; echo $$?)
-	ifneq ($(C), 0)
-		cat css/style-custom.css >> $(PREFIX)/$(ALTERNC_BASE_PATH)/admin/styles/style-custom.css
-	endif
+	install -d $(LOCALDIR)
+	install -d $(LOCALDIR)admin/styles
+	cp -r src/* $(LOCALDIR)
+	cat css/style-custom.css >> $(LOCALDIR)admin/styles/style-custom.css

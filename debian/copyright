@@ -1,6 +1,6 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: alternc-oneclickinstallers
-Source: <url://example.com>
+Source: https://github.com/kienanstewart/alternc-oneclickinstallers
 
 Files: *
 Copyright: 2018 Kienan Stewart <kienan@koumbit.org> 

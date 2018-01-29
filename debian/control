@@ -4,12 +4,14 @@ Priority: optional
 Maintainer: Kienan Stewart <kienan.stewart@burntworld.ca>
 Build-Depends: debhelper (>= 10)
 Standards-Version: 4.1.2
-Homepage: 
-#Vcs-Git: https://anonscm.debian.org/git/collab-maint/alternc-oneclickinstallers.git
-#Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/alternc-oneclickinstallers.git
+Homepage: https://github.com/kienanstewart/alternc-oneclickinstallers
+Vcs-Git: https://github.com/kienanstewart/alternc-oneclickinstallers.git
 
 Package: alternc-oneclickinstallers
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Depends: ${shlibs:Depends}, ${misc:Depends},
+ alternc
+Description: "One-click" installer plugin for AlternC
+ This plugin adds quick "one-click" installer options to AlternC,
+ supporting both Drupal and WordPress currently. More applications
+ can be added by creating new AlternC plugins.
