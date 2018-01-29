@@ -17,7 +17,7 @@ make install
 `
 
 If AlternC is installed in another directory, use something like: `
-ALTERNC_BASE_PATH=/your/path/alternc make install
+ALTERNC_BASE_PATH=/your/path/alternc/panel/ make install
 `
 
 # Configuration
