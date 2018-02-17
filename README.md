@@ -1,6 +1,8 @@
-Adds a panel to quick-install certain CMSs in AlternC. This module provides support for WordPress and Drupal.
+Adds a panel to quick-install certain CMSs in AlternC. This module provides
+support for WordPress and Drupal.
 
-Support for other CMSs may be added by other AlternC plugins. See "Extending" for more information.
+Support for other CMSs may be added by other AlternC plugins. See "Extending"
+for more information.
 
 # Installation
 
@@ -12,17 +14,17 @@ For [Drupal][2]: Install [Drush](https://github.com/drush-ops/drush/ "Drush on G
 
 ## Manual Install
 
-`
+```
 make install
-`
+```
 
-If AlternC is installed in another directory, use something like: `
-ALTERNC_BASE_PATH=/your/path/alternc/panel/ make install
-`
+If AlternC is installed in another directory, use something like:
+ `ALTERNC_BASE_PATH=/your/path/alternc/panel/ make install`
 
 # Configuration
 
-Once installed, add the Drush or WP-CLI paths to /etc/alternc/locals.sh. These need to be accessible within the basedir restrictions of the AlternC panel.
+Once installed, add the Drush or WP-CLI paths to /etc/alternc/locals.sh. These
+need to be accessible within the basedir restrictions of the AlternC panel.
 
 ```
 ALTERNC_DRUSH_BIN=/usr/local/bin/drush
@@ -38,13 +40,17 @@ CMSs are configured, the quick links menu item will not be displayed.
 
 # Extending
 
-A number of hooks are available to modify the install form and run the actual install. Drupal and WordPress are implemented as examples that could done in another module easily.
+A number of hooks are available to modify the install form and run the actual
+install. Drupal and WordPress are implemented as examples that could done in
+another module easily.
 
 # Roadmap
 
-This module is basically at a 'proof of concept' point. For a first proper release, the following should probably be added:
+This module is basically at a 'proof of concept' point. For a first proper
+release, the following should probably be added:
 
-* make sure form content and variables are properly escaped when passed between scripts
+* make sure form content and variables are properly escaped when passed between
+ scripts
 * user interface / form cleanup
   * hide form elements based on choices
   * sub-domain list changing based on chosen domain
@@ -54,10 +60,15 @@ This module is basically at a 'proof of concept' point. For a first proper relea
 
 Nice to haves:
 
-* threaded install script so user feedback doesn't have to wait X minutes until the shell scripts finish
+* threaded install script so user feedback doesn't have to wait X minutes until
+ the shell scripts finish
 
 # Copyright & License
 
 2018 Kienan Stewart <kienan@koumbit.org>
 
-Licensed under the GNU General Public License version 2.0 or later. See LICENSE for the full license text.
+Licensed under the GNU General Public License version 2.0 or later. See LICENSE
+for the full license text.
+
+[1]: https://wordpress.org/
+[2]: https://drupal.org/
