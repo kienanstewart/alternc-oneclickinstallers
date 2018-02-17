@@ -296,7 +296,7 @@ class m_oci {
 
         // Invoke hook to get app-specific form fields.
         $extra = '';
-        $vals = $hooks->invoke('hook_oic_form', array($app));
+        $vals = $hooks->invoke('hook_oci_form', array($app));
         foreach ($vals as $v) {
             if ($v) {
                 $extra .= $v;
@@ -317,13 +317,13 @@ class m_oci {
     }
 
     /**
-     * Implements hook_oic_form.
+     * Implements hook_oci_form.
      */
-    function hook_oic_form($app) {
+    function hook_oci_form($app) {
         $f = '';
         switch ($app) {
         case 'drupal':
-            // These fields should be defined in hook_oic_form_fields
+            // These fields should be defined in hook_oci_form_fields
             // Choose the install source
             $f .= '<div id="drupal-install-source-wrapper">';
             $f .= '<label for="drupal-install-source">' . _('Choose installation source') . '</label>';
