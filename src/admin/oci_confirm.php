@@ -59,7 +59,7 @@ if (!$oci->app_is_installable($application)) {
 }
 
 // @TODO validations
-$errors = $oci->oci_form_validate($oci_vars);
+$errors = $oci->oci_form_validate($application, $oci_vars);
 if (!empty($errors)) {
     print('<div class="validation-wrapper">');
     print('<h3>' . _('Validation Errors') . '</h3>');

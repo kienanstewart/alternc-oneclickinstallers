@@ -406,7 +406,7 @@ class m_oci {
      * @returns array
      *   Array of errors eg. array(0 => array('module' => 'm_oci', 'message' => '...'), ...)
      */
-    function oci_form_validate($vars) {
+    function oci_form_validate($app, $vars) {
         global $hooks, $dom, $db;
         $errors = array();
         if ($vars['domain'] == '*new*') {
@@ -515,7 +515,7 @@ class m_oci {
                 );
             }
         }
-        $vals = $hooks->invoke('hook_oci_form_validate', array($vars));
+        $vals = $hooks->invoke('hook_oci_form_validate', array($app, $vars));
         foreach ($vals as $v) {
             if ($v && is_array($v) && !is_empty($v)) {
                 $errors = $errors + $v;
@@ -527,7 +527,7 @@ class m_oci {
     /**
      * Implements hook_oci_form_validate.
      */
-    function hook_oci_form_validate($vars) {
+    function hook_oci_form_validate($app, $vars) {
         $errors = array();
         // @TODO Drupal
         // @TODO Wordpress
