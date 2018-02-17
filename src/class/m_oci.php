@@ -21,7 +21,12 @@
 class m_oci {
 
     function hook_menu() {
-        global $hooks;
+        global $mem, $hooks, $L_OCI_REQUIRE_SU;
+        if ($L_OCI_REQUIRE_SU) {
+            if (!$mem->checkright()) {
+                return;
+            }
+        }
         $menu = array(
             'title' => _('Quick Install'),
             'ico' => 'images/ocilogo.png',

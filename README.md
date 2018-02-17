@@ -24,12 +24,17 @@ ALTERNC_BASE_PATH=/your/path/alternc/panel/ make install
 
 Once installed, add the Drush or WP-CLI paths to /etc/alternc/locals.sh. These need to be accessible within the basedir restrictions of the AlternC panel.
 
-Example: `
+```
 ALTERNC_DRUSH_BIN=/usr/local/bin/drush
 ALTERNC_WPCLI_BIN=/usr/local/bin/wp
-`
 
-If they are not configured, the links for installation will be disabled. If no CMSs are configured, the quick links menu item will not be displayed.
+# Option to limit the One-Click Installer menu to users who have 'su' on their
+# account. Set to 1 to enable that restriction. Default is 0 (no restriction).
+OCI_REQUIRE_SU=0
+```
+
+If they are not configured, the links for installation will be disabled. If no
+CMSs are configured, the quick links menu item will not be displayed.
 
 # Extending
 
