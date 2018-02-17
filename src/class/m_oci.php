@@ -21,7 +21,7 @@
 class m_oci {
 
     function hook_menu() {
-        global $hooks, $L_ALTERNC_WPCLI_BIN, $L_ALTERNC_DRUSH_BIN;
+        global $hooks;
         $menu = array(
             'title' => _('Quick Install'),
             'ico' => 'images/ocilogo.png',
@@ -29,27 +29,35 @@ class m_oci {
             'pos' => 11,
             'links' => array(),
         );
-        // @TODO invoke a hook to get supported applications
-        // need: id (eg. wordpress), weight (to order), ico, and
-        // optionally - a different action path.
-        // @TODO required binaries for installation: eg, wp-cli, drush
+        $links = $hooks->invokve('hook_oci_menu');
+        if ($links) {
+            $menu['links'] = $links;
+        }
+        if ($menu['links']) {
+            return $menu;
+        }
+    }
+
+    /**
+     * Implements hook_oci_menu().
+     */
+    function hook_oci_menu() {
+        $links = array();
         if ($this->app_is_installable('wordpress')) {
-            $menu['links'][] = array(
+            $links[] = array(
                 'txt' => _('WordPress'),
                 'url' => 'oci_install.php?app=wordpress',
                 'ico' => 'images/wordpress.png',
             );
         }
         if ($this->app_is_installable('drupal')) {
-            $menu['links'][] = array(
+            $links[] = array(
                 'txt' => _('Drupal'),
                 'url' => 'oci_install.php?app=drupal',
                 'ico' => 'images/drupal.png',
             );
         }
-        if ($menu['links']) {
-            return $menu;
-        }
+        return $links;
     }
 
     /**
